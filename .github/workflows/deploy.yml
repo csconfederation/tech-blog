@@ -1,0 +1,16 @@
+name: Publish tech blog
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: enriikke/gatsby-gh-pages-action@v2.2.0
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-branch: main
