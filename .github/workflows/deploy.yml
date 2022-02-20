@@ -3,7 +3,7 @@ name: Publish tech blog
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   build:
@@ -13,5 +13,5 @@ jobs:
       - uses: enriikke/gatsby-gh-pages-action@v2.2.0
         with:
           access-token: x-access-token:${{ secrets.GITHUB_TOKEN }}
-          deploy-branch: main
+          deploy-branch: gh-pages
           gatsby-args: --prefix-paths
